@@ -4,9 +4,9 @@ let datafire = require('datafire');
 let hacker_news = require('@datafire/hacker_news').actions;
 module.exports = new datafire.Action({
   handler: async (input, context) => {
-    let storyIDs = await hacker_news.getStories({
-      storyType: "top",
+    let item = await hacker_news.getItem({
+      itemID: 4457,
     }, context);
-    return storyIDs;
+    return item;
   },
 });
